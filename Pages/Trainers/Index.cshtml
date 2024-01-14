@@ -1,0 +1,48 @@
+﻿@page
+@model PlatinumGym.Pages.Trainers.IndexModel
+
+@{
+    ViewData["Title"] = "Our Best Trainers";
+}
+
+<h1>Our Best Trainers</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainer[0].TrainerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainer[0].TrainerDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainer[0].TrainerExperience)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Trainer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainerDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainerExperience)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TrainerID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TrainerID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TrainerID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

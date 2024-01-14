@@ -1,0 +1,37 @@
+﻿@page
+@model PlatinumGym.Pages.Trainers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Trainer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trainer.TrainerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trainer.TrainerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trainer.TrainerDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trainer.TrainerDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trainer.TrainerExperience)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trainer.TrainerExperience)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Trainer?.TrainerID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
